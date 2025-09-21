@@ -1,12 +1,18 @@
-letters = "abcdefg"
+def solution(n):
+    result = []
+    for i in range(0, len(n), 2):
+        if len(n) % 2 != 0:
+            n += "_"
+        result.append(n[i:i + 2])
+        
+    print(result)
+        
 
-result = []
-
-for i in range (0, len(letters), 2):
-    if len(letters) % 2 != 0:
-        letters += "_"
-
-    result.append(letters[i:i + 2])
+solution("asdfadsf")
+solution("asdfads")
+solution("")
+solution("x")
 
 
-print(result)
+
+        
