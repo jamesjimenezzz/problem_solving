@@ -5,21 +5,25 @@
 
 #NEW: SORTED, .ISDIGIT
 
+x=0
+
+sentence = "is2 Thi1s T4est 3"
 
 
-sentence = "is2 Thi1s T4est 3a"
+splitted = sentence.split(" ")
 
-words = sentence.split()
 
-def extract_number(words: str) -> int:
-    for ch in words:
 
-        if ch.isdigit():
-            return int(ch)
+def extract_number(splitted):
+
+    for word in splitted:
+        for ch in word:
+            if ch.isdigit():
+                return int(ch)
+        
+    return 0
     
-    return 0 
 
+sorted_sentence = sorted(splitted, key=extract_number)
 
-words_sorted = sorted(words, key=extract_number) # kaya niyang isort yung isang array, kahit full of strings, basta may key na integer.
-
-print(words_sorted)
+print(sorted_sentence)
